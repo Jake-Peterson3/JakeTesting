@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Executive Portfolio | Iowa State University</title>
-    <!-- Google Fonts for Executive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -58,7 +57,7 @@
 
         .nav-link {
             display: block;
-            padding: 16px 24px;
+            padding: 16px 20px;
             color: #D3C8BE;
             text-decoration: none;
             font-family: 'Cinzel', serif;
@@ -219,6 +218,15 @@
             background-color: var(--bg-base);
             border-left: 3px solid var(--primary-accent);
             border-radius: 0 2px 2px 0;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(42, 33, 29, 0.05);
         }
 
         .card h3 {
@@ -256,12 +264,10 @@
 </head>
 <body>
 
-    <!-- Placeholder for JavaScript Navigation Insertion -->
     <div id="nav-placeholder"></div>
 
     <div class="page-container">
         <div class="wrapper">
-            <!-- Sidebar -->
             <aside>
                 <div>
                     <div class="profile-title">Finance & Marketing</div>
@@ -277,7 +283,6 @@
                 </div>
             </aside>
 
-            <!-- Main Executive Content -->
             <main>
                 <div class="institution-tag">Academic & Professional Biography</div>
                 <h1>Iowa State University</h1>
@@ -286,31 +291,30 @@
                     I am an undergraduate student at Iowa State University’s Ivy College of Business, pursuing a Bachelor of Science in Finance alongside a minor in Marketing and a certificate in Risk Management and Insurance. Driven by a strong foundation in financial analysis, risk strategy, and commercial coverage, I actively build on my coursework through practical industry experience—including a sales internship rotation with Gallagher and Risk Placement Services (RPS), where I gained hands-on exposure to risk program administration and healthcare lines. Beyond the classroom and workplace, I serve in leadership roles across campus, including offensive captain for the ISU Men’s Club Lacrosse team and active leadership within the Alpha Tau Omega and Delta Sigma Pi fraternities. Recognized with the Ivy Future Leaders Award, I remain deeply committed to driving impact both on campus and within my community.
                 </p>
 
-                <div class="section-header">Core Qualifications & Credentials</div>
+                <div class="section-header">Portfolio Overview</div>
                 
                 <div class="grid">
-                    <div class="card">
+                    <a href="education.html" class="card">
                         <h3>Education</h3>
                         <p>B.S. in Finance<br>Minor in Marketing<br>Risk Mgt. & Insurance Certificate</p>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="experience.html" class="card">
                         <h3>Experience</h3>
                         <p>Sales Intern Rotation<br>Gallagher & Risk Placement Services (RPS)</p>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="leadership.html" class="card">
                         <h3>Leadership</h3>
                         <p>Offensive Captain, ISU Lacrosse<br>Alpha Tau Omega<br>Delta Sigma Pi Fraternity</p>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="honors.html" class="card">
                         <h3>Honors</h3>
                         <p>Ivy Future Leaders Award Recipient</p>
-                    </div>
+                    </a>
                 </div>
             </main>
         </div>
     </div>
 
-    <!-- Include Navigation JS File -->
     <script src="nav.js"></script>
 </body>
 </html>
