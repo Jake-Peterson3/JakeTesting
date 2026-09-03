@@ -3,15 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const navElement = document.createElement("nav");
   navElement.className = "top-nav";
 
-  // 2. Define Navigation Links
+  // 2. Define Updated Navigation Links
   const links = [
     { name: "About Me", href: "index.html" },
     { name: "Education", href: "education.html" },
-    { name: "Hobbies", href: "hobbies.html" },
-    { name: "Personal Life", href: "personal-life.html" }
+    { name: "Experience", href: "experience.html" },
+    { name: "Leadership", href: "leadership.html" },
+    { name: "Honors", href: "honors.html" }
   ];
 
-  // 3. Get Current Page Filename for Active State
+  // 3. Get Current Page Filename for Active Highlight State
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
   // 4. Build Navigation HTML
