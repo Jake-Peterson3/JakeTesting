@@ -3,58 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Layout</title>
+  <title>Jake Peterson - Professional Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Main Container centered with 10% margins on sides/bottom -->
+  <!-- Main Container centered with 10% screen background margins -->
   <div class="site-container">
     
-    <!-- Header Area -->
+    <!-- Header Section -->
     <header class="header">
+      <!-- Left Column: Logo -->
       <div class="logo-area">
-        <h1>Logo</h1>
+        <h1>Jake Peterson</h1>
       </div>
+
+      <!-- Right Column: Info Graphic + Horizontal Navigations -->
       <div class="header-right">
         <div class="info-graphics">
-          This area is for informational graphics which describe in images what your site is about
+          Finance Major | Risk Management & Insurance | Leadership & Operations Portfolio
         </div>
-        <!-- Top Nav Container for JS component -->
-        <div id="top-nav-container"></div>
+        
+        <!-- Horizontal Primary Navigation Bar -->
+        <nav class="primary-nav-bar" id="primary-nav-top"></nav>
+
+        <!-- Horizontal Secondary Navigation Bar -->
+        <nav class="secondary-nav-bar" id="secondary-nav-top"></nav>
       </div>
     </header>
 
-    <!-- Main Content Layout (3 Columns) -->
+    <!-- Main Content Area (3 Columns) -->
     <div class="main-body">
       
-      <!-- Left Sidebar Container for JS component -->
+      <!-- Left Sidebar Container for Dynamic Navigation -->
       <aside class="sidebar-left" id="side-nav-container"></aside>
 
-      <!-- Center Main Content -->
+      <!-- Center Content Area -->
       <main class="content-center">
+        <!-- Hero Section -->
         <div class="hero-image">
-          <h2>Hero image at top</h2>
+          <h2>Hero image at top / Portfolio Banner</h2>
         </div>
+
+        <!-- Main Content Area (~400 words) -->
         <section class="main-text">
-          <h2>Main content area</h2>
-          <p>
-            This area HAS to contain html text and images (ie not image text). 
-            Text should be around 400 words and contain 5-7% keywords.
-          </p>
+          <h2>Main Content Area: Jake Peterson</h2>
+          
+          <div class="bio-section" id="about">
+            <h3>About Me</h3>
+            <p>
+              Welcome to my personal portfolio. I am an ambitious Finance student at Iowa State University with a dedicated focus on risk analysis, corporate strategy, marketing, and leadership. My professional approach combines analytical decision-making with proactive leadership and strong inter-personal communication. I strive to deliver value through structured problem-solving, operational effectiveness, and active team collaboration.
+            </p>
+          </div>
+
+          <div class="bio-section" id="education">
+            <h3>Education</h3>
+            <p>
+              I am pursuing my Bachelor of Science in Finance at Iowa State University’s Ivy College of Business, paired with a minor in Marketing and a professional certificate in Risk Management and Insurance. My academic foundation encompasses corporate finance, quantitative risk strategy, financial modeling, portfolio evaluation, and strategic market dynamics.
+            </p>
+          </div>
+
+          <div class="bio-section" id="experience">
+            <h3>Experience</h3>
+            <p>
+              My professional background spans commercial insurance brokerage, risk management programs, and public works operations. During my summer internship rotation with Gallagher and Risk Placement Services, Inc. (RPS), I gained valuable exposure across both Risk Program Administrators and RPS Healthcare divisions, supporting risk assessments, client underwriting workflows, and administrative strategy. Additionally, serving in seasonal municipal operations with the Village of Schaumburg Engineering and Public Works department reinforced my commitment to operational safety, efficiency, and team communication under demanding work conditions.
+            </p>
+          </div>
+
+          <div class="bio-section" id="leadership">
+            <h3>Leadership</h3>
+            <p>
+              Leadership and service are central pillars of my collegiate involvement. As the Offensive Captain for the Iowa State University Men's Club Lacrosse team, I direct on-field tactics, foster team unit accountability, and mentor teammates. My organizational leadership extends into active memberships with Alpha Tau Omega (ATO) and Delta Sigma Pi professional business fraternity, where I contribute to strategic planning, philanthropy coordination, and collegiate networking initiatives.
+            </p>
+          </div>
+
+          <div class="bio-section" id="honors">
+            <h3>Honors & Philanthropy</h3>
+            <p>
+              I am committed to giving back through community involvement, including leading fundraising efforts in support of Special Olympics Iowa through fraternity and campus partnerships. Consistently striving for academic and personal excellence, my honors reflect a dedication to continuous growth, civic impact, and leadership.
+            </p>
+          </div>
         </section>
       </main>
 
       <!-- Right Sidebar (Sticky Content) -->
       <aside class="sidebar-right">
         <div class="sticky-box">
-          <p>Sticky content such as:</p>
+          <p><strong>Sticky content such as</strong></p>
           <ul>
-            <li>news items</li>
-            <li>adverts</li>
-            <li>offers</li>
-            <li>general site info</li>
-            <li>Social Networking icons</li>
+            <li>Current Academic Year: Senior</li>
+            <li>Major: Finance</li>
+            <li>Minor: Marketing</li>
+            <li>Certificate: Risk Mgmt & Insurance</li>
+            <li>Contact: jake@example.com</li>
+            <li>Social Links: LinkedIn / GitHub</li>
           </ul>
         </div>
       </aside>
@@ -63,12 +105,12 @@
 
     <!-- Footer Area -->
     <footer class="footer">
-      Footer: Contains copyright info, current year, primary links, contact, privacy statement, webmaster email address
+      Footer: © 2026 Jake Peterson | Iowa State University Ivy College of Business | Contact: jake@example.com | Privacy Statement | Portfolio Site
     </footer>
 
   </div>
 
-  <!-- JavaScript for Navigation Component -->
+  <!-- Reusable Navigation System -->
   <script src="nav.js"></script>
 </body>
 </html>
