@@ -1,67 +1,63 @@
-// Nav Component Data Structure
-const navigationData = {
+// Centralized Navigation Data Structure
+const navItems = {
   primary: [
-    { title: "Home", url: "index.html" },
-    { title: "About", url: "about.html" },
-    { title: "Services", url: "services.html" },
-    { title: "Contact", url: "contact.html" }
+    { label: "About Me", url: "#about" },
+    { label: "Education", url: "#education" },
+    { label: "Experience", url: "#experience" },
+    { label: "Leadership", url: "#leadership" },
+    { label: "Honors", url: "#honors" }
   ],
   secondary: [
-    { title: "Privacy Policy", url: "privacy.html" },
-    { title: "Terms of Service", url: "terms.html" },
-    { title: "FAQ", url: "faq.html" }
+    { label: "Resume", url: "resume.pdf" },
+    { label: "Contact", url: "mailto:jake@example.com" },
+    { label: "Iowa State Ivy", url: "https://www.ivybusiness.iastate.edu" }
   ]
 };
 
-// Function to render Top Navigation
-function renderTopNavigation() {
-  const topNavContainer = document.getElementById("top-nav-container");
-  if (!topNavContainer) return;
+// Render Horizontal Top Navigation Bars
+function renderTopNav() {
+  const primaryContainer = document.getElementById("primary-nav-top");
+  const secondaryContainer = document.getElementById("secondary-nav-top");
 
-  const primaryLinksHTML = navigationData.primary
-    .map(link => `<a href="${link.url}">${link.title}</a>`)
-    .join(" | ");
+  if (primaryContainer) {
+    const primaryLinks = navItems.primary
+      .map(item => `<li><a href="${item.url}">${item.label}</a></li>`)
+      .join("");
+    primaryContainer.innerHTML = `<ul class="nav-horizontal-list">${primaryLinks}</ul>`;
+  }
 
-  const secondaryLinksHTML = navigationData.secondary
-    .map(link => `<a href="${link.url}">${link.title}</a>`)
-    .join(" | ");
-
-  topNavContainer.innerHTML = `
-    <nav class="nav-bar">
-      <div class="nav-link-row primary-nav">
-        <strong>Primary navigation:</strong> ${primaryLinksHTML}
-      </div>
-      <div class="nav-link-row secondary-nav">
-        <strong>Secondary navigation if needed:</strong> ${secondaryLinksHTML}
-      </div>
-    </nav>
-  `;
+  if (secondaryContainer) {
+    const secondaryLinks = navItems.secondary
+      .map(item => `<li><a href="${item.url}">${item.label}</a></li>`)
+      .join("");
+    secondaryContainer.innerHTML = `<ul class="nav-horizontal-list">${secondaryLinks}</ul>`;
+  }
 }
 
-// Function to render Left Sidebar Navigation
-function renderSideNavigation() {
-  const sideNavContainer = document.getElementById("side-nav-container");
-  if (!sideNavContainer) return;
+// Render Vertical Left Sidebar Navigation
+function renderSideNav() {
+  const sideContainer = document.getElementById("side-nav-container");
+  if (!sideContainer) return;
 
-  const createList = (items) => 
-    items.map(item => `<li><a href="${item.url}">${item.title}</a></li>`).join("");
+  const renderList = (items) =>
+    items.map(item => `<li><a href="${item.url}">${item.label}</a></li>`).join("");
 
-  sideNavContainer.innerHTML = `
-    <nav class="side-nav">
+  sideContainer.innerHTML = `
+    <nav>
       <div class="side-nav-group">
         <h4>Primary Navigation</h4>
-        <ul>${createList(navigationData.primary)}</ul>
+        <ul>${renderList(navItems.primary)}</ul>
       </div>
       <div class="side-nav-group">
-        <h4>Secondary navigation if needed</h4>
-        <ul>${createList(navigationData.secondary)}</ul>
+        <h4>Secondary Navigation</h4>
+        <ul>${renderList(navItems.secondary)}</ul>
       </div>
     </nav>
   `;
 }
 
-// Run functions on DOM load
+// Initialize Navigation on DOM Load
 document.addEventListener("DOMContentLoaded", () => {
-  renderTopNavigation();
-  renderSideNavigation();
+  renderTopNav();
+  renderSideNav();
 });
