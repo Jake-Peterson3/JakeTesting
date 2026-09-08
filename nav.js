@@ -1,38 +1,67 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // 1. Create Navigation Container Element
-  const navElement = document.createElement("nav");
-  navElement.className = "top-nav";
+// Nav Component Data Structure
+const navigationData = {
+  primary: [
+    { title: "Home", url: "index.html" },
+    { title: "About", url: "about.html" },
+    { title: "Services", url: "services.html" },
+    { title: "Contact", url: "contact.html" }
+  ],
+  secondary: [
+    { title: "Privacy Policy", url: "privacy.html" },
+    { title: "Terms of Service", url: "terms.html" },
+    { title: "FAQ", url: "faq.html" }
+  ]
+};
 
-  // 2. Define Navigation Tabs
-  const links = [
-    { name: "Home", href: "index.html" },
-    { name: "Education", href: "education.html" },
-    { name: "Experience", href: "experience.html" },
-    { name: "Leadership", href: "leadership.html" },
-    { name: "Honors", href: "honors.html" }
-  ];
+// Function to render Top Navigation
+function renderTopNavigation() {
+  const topNavContainer = document.getElementById("top-nav-container");
+  if (!topNavContainer) return;
 
-  // 3. Get Current Page Filename for Active Tab Highlight
-  let currentPage = window.location.pathname.split("/").pop();
-  if (!currentPage || currentPage === "") {
-    currentPage = "index.html";
-  }
+  const primaryLinksHTML = navigationData.primary
+    .map(link => `<a href="${link.url}">${link.title}</a>`)
+    .join(" | ");
 
-  // 4. Build Navigation HTML List
-  let navHTML = '<ul class="nav-list">';
-  links.forEach(link => {
-    const isActive = (currentPage === link.href) ? 'active' : '';
-    navHTML += `<li><a href="${link.href}" class="nav-link ${isActive}">${link.name}</a></li>`;
-  });
-  navHTML += '</ul>';
+  const secondaryLinksHTML = navigationData.secondary
+    .map(link => `<a href="${link.url}">${link.title}</a>`)
+    .join(" | ");
 
-  navElement.innerHTML = navHTML;
+  topNavContainer.innerHTML = `
+    <nav class="nav-bar">
+      <div class="nav-link-row primary-nav">
+        <strong>Primary navigation:</strong> ${primaryLinksHTML}
+      </div>
+      <div class="nav-link-row secondary-nav">
+        <strong>Secondary navigation if needed:</strong> ${secondaryLinksHTML}
+      </div>
+    </nav>
+  `;
+}
 
-  // 5. Inject Navigation into #nav-placeholder or Top of Page
-  const targetContainer = document.getElementById("nav-placeholder");
-  if (targetContainer) {
-    targetContainer.appendChild(navElement);
-  } else {
-    document.body.insertBefore(navElement, document.body.firstChild);
-  }
+// Function to render Left Sidebar Navigation
+function renderSideNavigation() {
+  const sideNavContainer = document.getElementById("side-nav-container");
+  if (!sideNavContainer) return;
+
+  const createList = (items) => 
+    items.map(item => `<li><a href="${item.url}">${item.title}</a></li>`).join("");
+
+  sideNavContainer.innerHTML = `
+    <nav class="side-nav">
+      <div class="side-nav-group">
+        <h4>Primary Navigation</h4>
+        <ul>${createList(navigationData.primary)}</ul>
+      </div>
+      <div class="side-nav-group">
+        <h4>Secondary navigation if needed</h4>
+        <ul>${createList(navigationData.secondary)}</ul>
+      </div>
+    </nav>
+  `;
+}
+
+// Run functions on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  renderTopNavigation();
+  renderSideNavigation();
 });
