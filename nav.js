@@ -1,21 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Create Navigation Container
+  // 1. Create Navigation Container Element
   const navElement = document.createElement("nav");
   navElement.className = "top-nav";
 
-  // 2. Define Updated Navigation Links
+  // 2. Define Navigation Tabs
   const links = [
-    { name: "About Me", href: "index.html" },
+    { name: "Home", href: "index.html" },
     { name: "Education", href: "education.html" },
     { name: "Experience", href: "experience.html" },
     { name: "Leadership", href: "leadership.html" },
     { name: "Honors", href: "honors.html" }
   ];
 
-  // 3. Get Current Page Filename for Active Highlight State
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  // 3. Get Current Page Filename for Active Tab Highlight
+  let currentPage = window.location.pathname.split("/").pop();
+  if (!currentPage || currentPage === "") {
+    currentPage = "index.html";
+  }
 
-  // 4. Build Navigation HTML
+  // 4. Build Navigation HTML List
   let navHTML = '<ul class="nav-list">';
   links.forEach(link => {
     const isActive = (currentPage === link.href) ? 'active' : '';
@@ -25,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navElement.innerHTML = navHTML;
 
-  // 5. Inject Navigation into Container or Top of Body
+  // 5. Inject Navigation into #nav-placeholder or Top of Page
   const targetContainer = document.getElementById("nav-placeholder");
   if (targetContainer) {
     targetContainer.appendChild(navElement);
