@@ -1,0 +1,185 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color Palette */
+  --color-espresso: #3d2314;
+  --color-taupe: #8b7d7b;
+  --color-light-bg: #ffffff;
+  --color-border: #000000;
+  --color-text: #222222;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  
+  /* 
+     Taupe & Espresso Brown Gradient Background 
+     Padding ensures 10% space from top/bottom and left/right
+  */
+  background: linear-gradient(135deg, var(--color-espresso) 0%, var(--color-taupe) 100%);
+  padding: 2vh 10vw 10vh 10vw; 
+  min-height: 100vh;
+}
+
+/* Main Site Wrapper */
+.site-container {
+  background-color: var(--color-light-bg);
+  border: 2px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+.header {
+  display: flex;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.logo-area {
+  width: 30%;
+  border-right: 2px solid var(--color-border);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-area h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.header-right {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-graphics {
+  padding: 15px;
+  border-bottom: 2px solid var(--color-border);
+  min-height: 60px;
+}
+
+/* Dynamic JS Nav Bar Styles */
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link-row {
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.nav-link-row:last-child {
+  border-bottom: none;
+}
+
+.nav-link-row a, 
+.side-nav-group a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 15px;
+}
+
+.nav-link-row a:hover, 
+.side-nav-group a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   MAIN CONTENT AREA (3-COLUMN LAYOUT)
+   ========================================== */
+.main-body {
+  display: flex;
+  flex: 1;
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* Left Sidebar */
+.sidebar-left {
+  width: 25%;
+  border-right: 2px solid var(--color-border);
+  padding: 20px;
+}
+
+.side-nav-group {
+  margin-bottom: 20px;
+}
+
+.side-nav-group h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.side-nav-group ul {
+  list-style: none;
+}
+
+.side-nav-group li {
+  margin-bottom: 6px;
+}
+
+/* Main Middle Content */
+.content-center {
+  width: 50%;
+  padding: 20px;
+  border-right: 2px solid var(--color-border);
+}
+
+.hero-image {
+  border: 2px solid var(--color-border);
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  max-width: 85%;
+}
+
+.main-text h2 {
+  margin-bottom: 15px;
+}
+
+.main-text p {
+  line-height: 1.5;
+}
+
+/* Right Sidebar (Sticky Content) */
+.sidebar-right {
+  width: 25%;
+  padding: 20px;
+}
+
+.sticky-box {
+  position: sticky;
+  top: 20px;
+}
+
+.sticky-box p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sticky-box ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FOOTER SECTION
+   ========================================== */
+.footer {
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  background-color: #f9f9f9;
+}
