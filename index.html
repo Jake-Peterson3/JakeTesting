@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Portfolio | Iowa State University</title>
+    <title>Jake Peterson | Executive Portfolio | Iowa State University</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,6 +32,25 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             line-height: 1.7;
             min-height: 100vh;
+        }
+
+        /* --- Global Header --- */
+        .site-header {
+            background-color: var(--primary-dark);
+            border-bottom: 2px solid var(--secondary-accent);
+            text-align: center;
+            padding: 32px 20px;
+            box-shadow: 0 4px 15px rgba(42, 33, 29, 0.2);
+        }
+
+        .site-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #FFFFFF;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 0;
         }
 
         /* --- Global Top Navigation Bar --- */
@@ -177,7 +196,7 @@
             margin-bottom: 8px;
         }
 
-        h1 {
+        main h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.1rem;
             color: var(--primary-dark);
@@ -244,6 +263,9 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .site-header h1 {
+                font-size: 1.6rem;
+            }
             .nav-list {
                 flex-direction: column;
             }
@@ -263,6 +285,11 @@
     </style>
 </head>
 <body>
+
+    <!-- Main Site Header -->
+    <header class="site-header">
+        <h1>Jake Peterson</h1>
+    </header>
 
     <div id="nav-placeholder"></div>
 
@@ -285,7 +312,7 @@
 
             <main>
                 <div class="institution-tag">Academic & Professional Biography</div>
-                <h1>Jake Peterson</h1>
+                <h2>Iowa State University</h2>
 
                 <p class="bio-text">
                     I am an undergraduate student at Iowa State University’s Ivy College of Business, pursuing a Bachelor of Science in Finance alongside a minor in Marketing and a certificate in Risk Management and Insurance. Driven by a strong foundation in financial analysis, risk strategy, and commercial coverage, I actively build on my coursework through practical industry experience—including a sales internship rotation with Gallagher and Risk Placement Services (RPS), where I gained hands-on exposure to risk program administration and healthcare lines. Beyond the classroom and workplace, I serve in leadership roles across campus, including offensive captain for the ISU Men’s Club Lacrosse team and active leadership within the Alpha Tau Omega and Delta Sigma Pi fraternities. Recognized with the Ivy Future Leaders Award, I remain deeply committed to driving impact both on campus and within my community.
