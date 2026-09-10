@@ -4,128 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Series Snowboards | High Performance Mountain Gear</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-color: #58a6ff;
-            --accent-hover: #1f6feb;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --border-color: #30363d;
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: var(--font-family);
-            line-height: 1.6;
-            padding: 0;
-        }
-
-        header {
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(22, 27, 34, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
+        /* Product-specific styles aligned with main portfolio design */
+        
         .product-hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 4rem;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
         }
 
         .product-image-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border: 2px solid var(--color-border);
             padding: 2rem;
             text-align: center;
         }
 
         .product-image-placeholder {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            border-radius: 8px;
+            height: 300px;
+            background-color: #f5f5f5;
+            border: 2px dashed var(--color-border);
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-secondary);
+            color: var(--color-text);
             font-weight: 600;
-            border: 1px dashed var(--border-color);
+        }
+
+        .product-details {
+            padding: 0;
         }
 
         .tag {
             display: inline-block;
-            background-color: rgba(88, 166, 255, 0.15);
-            color: var(--accent-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
+            background-color: var(--color-taupe);
+            color: var(--color-bg-white);
+            padding: 0.35rem 0.85rem;
+            border-radius: 0;
+            border: 1px solid var(--color-border);
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 1rem;
         }
 
         .product-title {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
+            font-size: 2rem;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            font-weight: bold;
         }
 
         .price {
-            font-size: 1.75rem;
-            color: #fff;
+            font-size: 1.5rem;
+            color: var(--color-espresso);
             font-weight: 600;
             margin-bottom: 1.5rem;
         }
 
         .description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1rem;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .specs-grid {
@@ -133,97 +78,156 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             margin-bottom: 2rem;
+            border: 2px solid var(--color-border);
         }
 
         .spec-item {
-            background-color: var(--card-bg);
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
+            background-color: var(--color-bg-white);
+            padding: 1rem;
+            border-right: 2px solid var(--color-border);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .spec-item:nth-child(2n) {
+            border-right: none;
+        }
+
+        .spec-item:nth-last-child(-n+2) {
+            border-bottom: none;
         }
 
         .spec-label {
             font-size: 0.75rem;
-            color: var(--text-secondary);
+            color: var(--color-taupe);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
         }
 
         .spec-value {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #fff;
+            color: var(--color-text);
         }
 
         .btn-primary {
-            display: inline-block;
+            display: block;
             width: 100%;
             text-align: center;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 0.85rem 1.5rem;
-            border-radius: 6px;
+            background-color: var(--color-espresso);
+            color: var(--color-bg-white);
+            padding: 0.9rem 1.5rem;
+            border-radius: 0;
+            border: 2px solid var(--color-border);
             font-weight: 600;
             text-decoration: none;
             transition: background-color 0.2s ease;
-            border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-hover);
+            background-color: var(--color-taupe);
+            color: var(--color-bg-white);
         }
 
         .section-title {
-            font-size: 1.5rem;
-            color: #fff;
+            font-size: 1.4rem;
+            color: var(--color-text);
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0.75rem;
+            font-weight: bold;
         }
 
         .lineup-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            background-color: var(--color-bg-white);
+            border: 2px solid var(--color-border);
+            border-radius: 0;
             padding: 1.5rem;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            background-color: #f9f9f9;
         }
 
         .card-title {
-            font-size: 1.2rem;
-            color: #fff;
+            font-size: 1.1rem;
+            color: var(--color-text);
             margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
         .card-price {
-            color: var(--accent-color);
+            color: var(--color-espresso);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
         }
 
-        footer {
-            border-top: 1px solid var(--border-color);
+        .card .description {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-header {
+            display: flex;
+            border-bottom: 2px solid var(--color-border);
+            margin-bottom: 2rem;
+        }
+
+        .product-header-left {
+            width: 30%;
+            border-right: 2px solid var(--color-border);
+            padding: 20px;
+        }
+
+        .product-header-right {
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-nav {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .product-nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .product-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .product-container {
+            background-color: var(--color-bg-white);
+            border: 2px solid var(--color-border);
+            width: 100%;
             padding: 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 4rem;
         }
 
         @media (max-width: 768px) {
             .product-hero {
+                grid-template-columns: 1fr;
+            }
+            .lineup-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -231,88 +235,97 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">ALPINE // GEAR</div>
-        <nav>
-            <a href="#featured">Featured</a>
-            <a href="#lineup">Lineup</a>
-            <a href="#specs">Specs</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <!-- Featured Product Hero -->
-        <section class="product-hero" id="featured">
-            <div class="product-image-container">
-                <div class="product-image-placeholder">
-                    [ Snowboard Graphic Preview ]
-                </div>
+    <div class="site-container">
+        <!-- Header matching main portfolio design -->
+        <div class="product-header">
+            <div class="product-header-left">
+                <h1 style="font-size: 2.2rem; font-weight: bold;">ALPINE // GEAR</h1>
             </div>
-
-            <div class="product-details">
-                <span class="tag">All-Mountain // Flagship</span>
-                <h1 class="product-title">Apex Pro Carbon 158</h1>
-                <div class="price">$599.99</div>
-                <p class="description">
-                    Engineered for high-speed stability and precision edge control. Features a lightweight paulownia/poplar wood core wrapped in full triaxial fiberglass and carbon fiber stringers for maximum snap.
-                </p>
-
-                <div class="specs-grid" id="specs">
-                    <div class="spec-item">
-                        <div class="spec-label">Terrain</div>
-                        <div class="spec-value">All-Mountain / Freeride</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Flex Rating</div>
-                        <div class="spec-value">7 / 10 (Stiff)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Profile</div>
-                        <div class="spec-value">CamRock (Camber-Rocker)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Shape</div>
-                        <div class="spec-value">Directional Twin</div>
-                    </div>
-                </div>
-
-                <button class="btn-primary" onclick="alert('Added to cart!')">Add to Cart</button>
+            <div class="product-header-right">
+                <nav class="product-nav">
+                    <a href="#featured">Featured</a>
+                    <a href="#lineup">Lineup</a>
+                    <a href="#specs">Specifications</a>
+                </nav>
             </div>
-        </section>
+        </div>
 
-        <!-- Product Lineup Grid -->
-        <section id="lineup">
-            <h2 class="section-title">2026/2027 Lineup</h2>
-            <div class="lineup-grid">
-                
-                <div class="card">
-                    <h3 class="card-title">Apex Park 152</h3>
-                    <div class="card-price">$479.99</div>
-                    <p class="description">True twin freestyle board with soft flex and extra durable edges designed for rails and jumps.</p>
-                    <div class="spec-label">Flex: 4/10 | Profile: Flat-to-Rocker</div>
+        <!-- Main Content Container -->
+        <div class="product-container">
+            <!-- Featured Product Hero -->
+            <section class="product-hero" id="featured">
+                <div class="product-image-container">
+                    <div class="product-image-placeholder">
+                        [ Snowboard Graphic Preview ]
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3 class="card-title">Apex Powder Chaser 161</h3>
-                    <div class="card-price">$649.99</div>
-                    <p class="description">Tapered tail and oversized nose camber profile built specifically for deep snow float and tree runs.</p>
-                    <div class="spec-label">Flex: 6/10 | Profile: Directional Powder Camber</div>
-                </div>
+                <div class="product-details">
+                    <span class="tag">All-Mountain // Flagship</span>
+                    <h2 class="product-title">Apex Pro Carbon 158</h2>
+                    <div class="price">$599.99</div>
+                    <p class="description">
+                        Engineered for high-speed stability and precision edge control. Features a lightweight paulownia/poplar wood core wrapped in full triaxial fiberglass and carbon fiber stringers for responsive control and durability in all conditions.
+                    </p>
 
-                <div class="card">
-                    <h3 class="card-title">Apex All-Terrain 156</h3>
-                    <div class="card-price">$529.99</div>
-                    <p class="description">Versatile medium-flex board for intermediate to advanced riders seeking a reliable daily driver.</p>
-                    <div class="spec-label">Flex: 6/10 | Profile: Hybrid Camber</div>
-                </div>
+                    <div class="specs-grid" id="specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Terrain</div>
+                            <div class="spec-value">All-Mountain / Freeride</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Flex Rating</div>
+                            <div class="spec-value">7 / 10 (Stiff)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Profile</div>
+                            <div class="spec-value">CamRock (Camber-Rocker)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Shape</div>
+                            <div class="spec-value">Directional Twin</div>
+                        </div>
+                    </div>
 
-            </div>
-        </section>
+                    <button class="btn-primary" onclick="alert('Added to cart!')">Add to Cart</button>
+                </div>
+            </section>
+
+            <!-- Product Lineup Grid -->
+            <section id="lineup" style="margin-top: 3rem;">
+                <h2 class="section-title">2026/2027 Lineup</h2>
+                <div class="lineup-grid">
+                    
+                    <div class="card">
+                        <h3 class="card-title">Apex Park 152</h3>
+                        <div class="card-price">$479.99</div>
+                        <p class="description">True twin freestyle board with soft flex and extra durable edges designed for rails and jumps.</p>
+                        <div class="spec-label">Flex: 4/10 | Profile: Flat-to-Rocker</div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Apex Powder Chaser 161</h3>
+                        <div class="card-price">$649.99</div>
+                        <p class="description">Tapered tail and oversized nose camber profile built specifically for deep snow float and tree runs.</p>
+                        <div class="spec-label">Flex: 6/10 | Profile: Directional Powder Camber</div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Apex All-Terrain 156</h3>
+                        <div class="card-price">$529.99</div>
+                        <p class="description">Versatile medium-flex board for intermediate to advanced riders seeking a reliable daily driver.</p>
+                        <div class="spec-label">Flex: 6/10 | Profile: Hybrid Camber</div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer matching main portfolio design -->
+        <footer class="footer">
+            &copy; 2026 Alpine Gear Co. | Jake Peterson Portfolio | Hosted on GitHub Pages
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Alpine Gear Co. Hosted on GitHub Pages.</p>
-    </footer>
 
 </body>
 </html>
