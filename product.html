@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Series Snowboards | High Performance Mountain Gear</title>
+    <title>Jones Boards Snowboards | High Performance Mountain Gear</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Product-specific styles aligned with main portfolio design */
@@ -22,17 +22,12 @@
             text-align: center;
         }
 
-        .product-image-placeholder {
+        .product-image {
             width: 100%;
-            height: 300px;
+            height: 400px;
+            object-fit: contain;
             background-color: #f5f5f5;
-            border: 2px dashed var(--color-border);
             border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text);
-            font-weight: 600;
         }
 
         .product-details {
@@ -160,6 +155,15 @@
             background-color: #f9f9f9;
         }
 
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-border);
+        }
+
         .card-title {
             font-size: 1.1rem;
             color: var(--color-text);
@@ -239,7 +243,7 @@
         <!-- Header matching main portfolio design -->
         <div class="product-header">
             <div class="product-header-left">
-                <h1 style="font-size: 2.2rem; font-weight: bold;">ALPINE // GEAR</h1>
+                <h1 style="font-size: 2.2rem; font-weight: bold;">JONES // BOARDS</h1>
             </div>
             <div class="product-header-right">
                 <nav class="product-nav">
@@ -255,17 +259,15 @@
             <!-- Featured Product Hero -->
             <section class="product-hero" id="featured">
                 <div class="product-image-container">
-                    <div class="product-image-placeholder">
-                        [ Snowboard Graphic Preview ]
-                    </div>
+                    <img src="https://www.jonesstow.com/cdn/shop/files/MTN-Collective.jpg?v=1729175160&width=600" alt="Jones Mountain Twin Snowboard" class="product-image">
                 </div>
 
                 <div class="product-details">
                     <span class="tag">All-Mountain // Flagship</span>
-                    <h2 class="product-title">Apex Pro Carbon 158</h2>
-                    <div class="price">$599.99</div>
+                    <h2 class="product-title">Jones Mountain Twin 158</h2>
+                    <div class="price">$649.99</div>
                     <p class="description">
-                        Engineered for high-speed stability and precision edge control. Features a lightweight paulownia/poplar wood core wrapped in full triaxial fiberglass and carbon fiber stringers for responsive control and durability in all conditions.
+                        The definitive all-mountain board. Engineered with a proven directional twin shape for responsive carving and stable landings. Features a lightweight Paulownia wood core with full carbon reinforcement for edge hold and precision control in any condition.
                     </p>
 
                     <div class="specs-grid" id="specs">
@@ -275,11 +277,11 @@
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Flex Rating</div>
-                            <div class="spec-value">7 / 10 (Stiff)</div>
+                            <div class="spec-value">6 / 10 (Medium-Stiff)</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Profile</div>
-                            <div class="spec-value">CamRock (Camber-Rocker)</div>
+                            <div class="spec-value">Camber</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Shape</div>
@@ -293,28 +295,31 @@
 
             <!-- Product Lineup Grid -->
             <section id="lineup" style="margin-top: 3rem;">
-                <h2 class="section-title">2026/2027 Lineup</h2>
+                <h2 class="section-title">2025/2026 Lineup</h2>
                 <div class="lineup-grid">
                     
                     <div class="card">
-                        <h3 class="card-title">Apex Park 152</h3>
-                        <div class="card-price">$479.99</div>
-                        <p class="description">True twin freestyle board with soft flex and extra durable edges designed for rails and jumps.</p>
-                        <div class="spec-label">Flex: 4/10 | Profile: Flat-to-Rocker</div>
+                        <img src="https://www.jonesstow.com/cdn/shop/files/CC_Collective_Angle_2.jpg?v=1723057169&width=500" alt="Jones Frontier Snowboard" class="card-image">
+                        <h3 class="card-title">Jones Frontier</h3>
+                        <div class="card-price">$519.99</div>
+                        <p class="description">Directional all-mountain hybrid ideal for exploration and backcountry riding with responsive edge control.</p>
+                        <div class="spec-label">Flex: 5/10 | Profile: Hybrid Camber</div>
                     </div>
 
                     <div class="card">
-                        <h3 class="card-title">Apex Powder Chaser 161</h3>
-                        <div class="card-price">$649.99</div>
-                        <p class="description">Tapered tail and oversized nose camber profile built specifically for deep snow float and tree runs.</p>
-                        <div class="spec-label">Flex: 6/10 | Profile: Directional Powder Camber</div>
+                        <img src="https://www.jonesstow.com/cdn/shop/files/Explorer_Collective.jpg?v=1729175160&width=600" alt="Jones Explorer Snowboard" class="card-image">
+                        <h3 class="card-title">Jones Explorer</h3>
+                        <div class="card-price">$599.99</div>
+                        <p class="description">Versatile powder-oriented directional board with wide stance and forgiving flex for mixed mountain terrain.</p>
+                        <div class="spec-label">Flex: 4/10 | Profile: Directional Rocker</div>
                     </div>
 
                     <div class="card">
-                        <h3 class="card-title">Apex All-Terrain 156</h3>
-                        <div class="card-price">$529.99</div>
-                        <p class="description">Versatile medium-flex board for intermediate to advanced riders seeking a reliable daily driver.</p>
-                        <div class="spec-label">Flex: 6/10 | Profile: Hybrid Camber</div>
+                        <img src="https://www.jonesstow.com/cdn/shop/files/Flagship_Collective_hero.jpg?v=1729175160&width=600" alt="Jones Flagship Snowboard" class="card-image">
+                        <h3 class="card-title">Jones Flagship</h3>
+                        <div class="card-price">$679.99</div>
+                        <p class="description">Premium all-mountain performance board built for aggressive riders seeking maximum pop and responsiveness.</p>
+                        <div class="spec-label">Flex: 7/10 | Profile: Full Camber</div>
                     </div>
 
                 </div>
@@ -323,7 +328,7 @@
 
         <!-- Footer matching main portfolio design -->
         <footer class="footer">
-            &copy; 2026 Alpine Gear Co. | Jake Peterson Portfolio | Hosted on GitHub Pages
+            &copy; 2025 Jones Snowboards | Jake Peterson Portfolio | Hosted on GitHub Pages
         </footer>
     </div>
 
