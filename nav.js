@@ -8,7 +8,7 @@ const navItems = {
     { label: "Honors", url: "#honors" }
   ],
   secondary: [
-    { label: "Resume", url: "resume.pdf" },
+    { label: "Products", url: "product.html" },
     { label: "Contact", url: "mailto:jake@example.com" },
     { label: "Iowa State Ivy", url: "https://www.ivybusiness.iastate.edu" }
   ]
