@@ -9,7 +9,7 @@ const navItems = {
   ],
   secondary: [
     { label: "Products", url: "product.html" },
-    { label: "Contact", url: "mailto:jake@example.com" },
+    { label: "Contact", url: "https://forms.gle/peHViWMsbxwy7Zvc9" },
     { label: "Iowa State Ivy", url: "https://www.ivybusiness.iastate.edu" }
   ]
 };
@@ -28,7 +28,7 @@ function renderTopNav() {
 
   if (secondaryContainer) {
     const secondaryLinks = navItems.secondary
-      .map(item => `<li><a href="${item.url}">${item.label}</a></li>`)
+      .map(item => `<li><a href="${item.url}"${item.label === "Contact" ? ' target="_blank" rel="noopener noreferrer"' : ""}>${item.label}</a></li>`)
       .join("");
     secondaryContainer.innerHTML = `<ul class="nav-horizontal-list">${secondaryLinks}</ul>`;
   }
@@ -40,7 +40,7 @@ function renderSideNav() {
   if (!sideContainer) return;
 
   const renderList = (items) =>
-    items.map(item => `<li><a href="${item.url}">${item.label}</a></li>`).join("");
+    items.map(item => `<li><a href="${item.url}"${item.label === "Contact" ? ' target="_blank" rel="noopener noreferrer"' : ""}>${item.label}</a></li>`).join("");
 
   sideContainer.innerHTML = `
     <nav>
